@@ -159,3 +159,32 @@
   transition: all 0.15s linear;
   opacity: 0%;
 }
+
+/* TO-DO block */
+.todo-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px 8px 8px;
+  background-color: var(--main-accent-color);
+  border-radius: 16px;
+  min-height: 62px;
+}
+.todo-block:has(input[type="checkbox"]:checked) > .todo-block__data {
+  text-decoration: line-through;
+  color: rgba(29, 27, 30, 0.5) !important;
+}
+.todo-block__data {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.todo-block__date {
+  font-size: 14px;
+  color: inherit;
+}
+.todo-block__title {
+  font-size: 16px;
+  font-weight: 400;
+  color: inherit;
+}
