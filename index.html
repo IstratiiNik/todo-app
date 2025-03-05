@@ -73,8 +73,8 @@
         <h3 class="todo-block__title">Покормить кошку</h3>
       </div>
     </li>
-	 
-	 <!-- Form -->
+
+    <!-- Form -->
     <form id="create-form" class="create-form">
       <input
         type="text"
@@ -101,6 +101,12 @@
         </button>
       </div>
     </form>
+
     <script src="scripts/script.js"></script>
+    <script>
+      document.querySelector("#create-form").addEventListener("submit", (e) => {
+        createTodo(e);
+      });
+    </script>
   </body>
 </html>
