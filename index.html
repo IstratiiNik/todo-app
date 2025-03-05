@@ -108,5 +108,12 @@
         createTodo(e);
       });
     </script>
+    <script>
+      document.querySelector("#create-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        createTodo(e);
+      });
+      renderTodos();
+    </script>
   </body>
 </html>

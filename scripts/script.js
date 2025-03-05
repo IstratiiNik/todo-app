@@ -29,3 +29,42 @@ const createTodo = (e) => {
   }
   renderTodos();
 };
+
+const renderTodos = () => {
+  const localStorageTodos = JSON.parse(localStorage.getItem("todosStorage"));
+  if (localStorageTodos && Array.isArray(localStorageTodos)) {
+    // Получаем контейнер элементов
+    const container = document.querySelector("#todo-list ");
+    // Обнуляем содержимое
+    container.innerHTML = "";
+    //  Проходим по массиву элементов и по одному добавляем в контейнер
+    localStorageTodos.forEach((todo) => {
+      const startDate = new Date(todo.startDate).toLocaleTimeString("ru-RU", {
+        day: "numeric",
+        month: "long",
+        hour: "numeric",
+        minute: "numeric",
+      });
+      const id = todo.id;
+      //разметка элемента
+      container.insertAdjacentHTML(
+        "beforeend",
+        `
+<li class="todo-block">
+<label class="checkbox" for="${id}"
+onclick="toggleTodoDone('${id}')">
+<input type="checkbox" name="${id}" id="${id}" ${todo.done ? "checked" : ""}/>
+<span class="material-symbols-rounded checkbox__check-icon">
+check
+</span>
+</label>
+<div class="todo-block__data">
+<p class="todo-block__date">${startDate}</p>
+<h3 class="todo-block__title">${todo.description}</h3>
+</div>
+</li>
+`
+      );
+    });
+  }
+};
