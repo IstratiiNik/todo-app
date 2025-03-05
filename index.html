@@ -73,6 +73,34 @@
         <h3 class="todo-block__title">Покормить кошку</h3>
       </div>
     </li>
+	 
+	 <!-- Form -->
+    <form id="create-form" class="create-form">
+      <input
+        type="text"
+        class="create-form__input"
+        placeholder="Описание"
+        name="description"
+        id="description"
+        required
+      />
+      <input
+        type="datetime-local"
+        class="create-form__input"
+        placeholder="Дата"
+        name="startDate"
+        id="startDate"
+        required
+      />
+      <div class="form__buttons-wrapper">
+        <button class="form-button form-button--primary" type="submit">
+          Добавить
+        </button>
+        <button class="form-button form-button--secondary" type="reset">
+          Очистить
+        </button>
+      </div>
+    </form>
     <script src="scripts/script.js"></script>
   </body>
 </html>
